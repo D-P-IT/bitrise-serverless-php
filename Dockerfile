@@ -138,6 +138,14 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/so
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq && sudo apt-get install -y yarn
 
 
+# Install Composer
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+
+# Install Serverless Framework and AWS
+RUN curl -o- -L https://slss.io/install | bash
+
+
 # Install docker
 #  as described at: https://docs.docker.com/engine/installation/linux/ubuntu/
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
