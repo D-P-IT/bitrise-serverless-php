@@ -143,7 +143,7 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 
 # Install Serverless Framework and AWS
-RUN curl -o- -L https://slss.io/install | bash
+RUN npm install -g serverless
 
 
 # Install docker
