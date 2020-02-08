@@ -138,6 +138,24 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/so
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq && sudo apt-get install -y yarn
 
 
+# Install PHP
+RUN LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y update
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
+    php-pear \
+    php7.3-cli \
+    php7.3-curl \
+    php7.3-gd \
+    php7.3-mbstring \
+    php7.3-zip \
+    php7.3-xml \
+    php7.3-imagick \
+    php7.3-recode \
+    php7.3-tidy \
+    php7.3-xmlrpc \
+    php7.3-intl
+
+
 # Install Composer
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
