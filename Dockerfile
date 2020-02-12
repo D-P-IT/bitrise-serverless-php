@@ -138,6 +138,10 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/so
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq && sudo apt-get install -y yarn
 
 
+# Install angular & ionic
+RUN npm install -g @angular/cli@9 @ionic/cli@6
+
+
 # Install PHP
 RUN LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y update
