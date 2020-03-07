@@ -157,7 +157,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
     php7.3-recode \
     php7.3-tidy \
     php7.3-xmlrpc \
-    php7.3-intl
+    php7.3-intl \
+    php7.3-mysql \
+    php-xdebug
 
 
 # Install Composer
