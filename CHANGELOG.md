@@ -1,5 +1,32 @@
 ## UPCOMING
 
+## 'v2020_06_25_1'
+* `Node.js updated to use latest LTS - 12.x`
+
+## 'v2020_05_19_1'
+* `Bitrise cli updated to 1.42.0`
+
+## 'v2020_04_28_1'
+* `Bitrise cli updated to 1.41.2`
+
+## 'v2020_04_17_1'
+* `Bitrise cli updated to 1.41.1`
+
+## 'v2020_04_08_1'
+* `Bitrise cli updated to 1.40.1`
+
+## 'v2020_03_11_1'
+* `Docker engine updated to 19.03.0`
+
+## 'v2020_02_26_1'
+* `Bitrise cli: 1.39.1`
+
+## 'v2020_02_12_2'
+* `Ruby: 2.7.0`
+
+## 'v2020_02_12_1'
+* `Bitrise cli: 1.39.0`
+
 ## 'v2020_01_15_1'
 * `Bitrise cli: 1.38.0`
 

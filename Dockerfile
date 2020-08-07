@@ -20,10 +20,10 @@ ENV LANG="en_US.UTF-8" \
     BITRISE_PREP_DIR="/bitrise/prep" \
     BITRISE_TMP_DIR="/bitrise/tmp" \
     # Configs - tool versions
-    TOOL_VER_BITRISE_CLI="1.38.0" \
-    TOOL_VER_RUBY="2.5.1" \
+    TOOL_VER_BITRISE_CLI="1.42.0" \
+    TOOL_VER_RUBY="2.7.0" \
     TOOL_VER_GO="1.13" \
-    TOOL_VER_DOCKER="5:18.09.4" \
+    TOOL_VER_DOCKER="5:19.03.0" \
     TOOL_VER_DOCKER_COMPOSE="1.21.2"
 
 # create base dirs
@@ -94,7 +94,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
     libsqlite3-dev \
     && mkdir -p /tmp/ruby-inst \
     && cd /tmp/ruby-inst \
-    && wget -q http://cache.ruby-lang.org/pub/ruby/ruby-${TOOL_VER_RUBY}.tar.gz \
+    && wget -q https://cache.ruby-lang.org/pub/ruby/$(echo "${TOOL_VER_RUBY}" | cut -d'.' -f 1,2)/ruby-${TOOL_VER_RUBY}.tar.gz \
     && tar -xvzf ruby-${TOOL_VER_RUBY}.tar.gz \
     && cd ruby-${TOOL_VER_RUBY} \
     && ./configure --prefix=/usr/local && make && make install \
@@ -123,7 +123,7 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 755 "$GOPATH"
 
 # Install NodeJS
 #  from official docs: https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
-RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
 
 # Install npm 
@@ -232,5 +232,5 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install git-lfs \
 
 WORKDIR $BITRISE_SOURCE_DIR
 
-ENV BITRISE_DOCKER_REV_NUMBER_BASE v2020_01_15_1
+ENV BITRISE_DOCKER_REV_NUMBER_BASE v2020_06_25_1
 CMD bitrise --version
