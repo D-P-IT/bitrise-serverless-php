@@ -1,5 +1,23 @@
 ## UPCOMING
 
+## `v2021_03_30`
+* `update git version to latest (2.31.1)`
+
+## `v2020_12_01_1`
+
+* `aws-cli preinstalled`
+
+## `v2020_11_27_1`
+
+* `jq preinstalled`
+
+## 'v2020_11_03'
+* `Bitrise cli updated to 1.44.0`
+
+## `v2020_09_21_1`
+
+* Golang upgraded from 1.13 to 1.15.2
+
 ## 'v2020_06_25_1'
 * `Node.js updated to use latest LTS - 12.x`
 
