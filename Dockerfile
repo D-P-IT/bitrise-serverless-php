@@ -78,7 +78,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
     imagemagick \
     groff \
     jq \
-    awscli
+    awscli \
+    # For PPAs
+    software-properties-common
 
 # ------------------------------------------------------
 # --- Pre-installed but not through apt-get
@@ -143,7 +145,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -qq && sudo apt-get install -y
 
 
 # Install angular & ionic
-RUN npm install -g @angular/cli@9 @ionic/cli@6
+RUN npm install -g @angular/cli@11 @ionic/cli@6
 
 
 # Install PHP
